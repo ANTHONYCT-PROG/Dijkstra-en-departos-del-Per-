@@ -1,0 +1,296 @@
+/* Reset y Variables Bases */
+:root {
+    --bg-panel: rgba(18, 20, 28, 0.85);
+    --bg-panel-border: rgba(255, 255, 255, 0.1);
+    --text-primary: #ffffff;
+    --text-secondary: #9ca3af;
+    --accent: #6366f1;
+    --accent-hover: #4f46e5;
+    --error: #ef4444;
+    --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: #000;
+    color: var(--text-primary);
+    overflow: hidden; /* Todo está en el mapa */
+}
+
+/* Contenedor del Mapa */
+#map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+
+/* Estilo del Panel Flotante Glassmorphism */
+.ui-panel {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    width: 380px;
+    max-height: calc(100vh - 80px);
+    z-index: 10;
+    background: var(--bg-panel);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--bg-panel-border);
+    border-radius: 24px;
+    padding: 32px 24px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    overflow-y: auto;
+}
+
+/* Ocultar barra de scroll para estética limpia en el panel */
+.ui-panel::-webkit-scrollbar {
+    display: none;
+}
+.ui-panel {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.panel-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+}
+
+.panel-header h1 span {
+    color: var(--accent);
+}
+
+.panel-header p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Controles */
+.controls-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    border-radius: 16px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.select-wrapper {
+    position: relative;
+}
+
+.select-wrapper::after {
+    content: "▼";
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    pointer-events: none;
+}
+
+select {
+    width: 100%;
+    appearance: none;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 14px 16px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+select option {
+    background: #1e1e1e;
+    color: #fff;
+}
+
+.icon-connector {
+    display: flex;
+    justify-content: center;
+    color: var(--accent);
+    opacity: 0.8;
+}
+
+/* Botón Principal */
+.primary-btn {
+    margin-top: 10px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+}
+
+.primary-btn:active {
+    transform: translateY(0);
+}
+
+.primary-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Loader Animation inside Button */
+.loader {
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Tarjeta de Resultados */
+.results-card {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 24px;
+    animation: slideUp 0.4s ease forwards;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.results-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+    color: var(--text-secondary);
+}
+
+.distance-metric {
+    display: flex;
+    align-items:baseline;
+    gap: 8px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 16px;
+}
+
+.distance-metric .value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #10b981; /* Emerald green */
+}
+
+.distance-metric .unit {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Steps de la Ruta */
+.path-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.path-step {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    padding-bottom: 24px;
+}
+
+.path-step:last-child {
+    padding-bottom: 0;
+}
+
+.path-step::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 20px;
+    bottom: -10px;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.path-step:last-child::before {
+    display: none;
+}
+
+.step-dot {
+    width: 12px;
+    height: 12px;
+    background: var(--text-secondary);
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    border: 2px solid var(--bg-panel);
+}
+
+.path-step.highlight .step-dot {
+    background: #10b981;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+}
+
+.step-label {
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+.hidden {
+    display: none !important;
+}
