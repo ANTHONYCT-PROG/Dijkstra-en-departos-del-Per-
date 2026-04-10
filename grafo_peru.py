@@ -1,4 +1,3 @@
-# Diccionario con las coordenadas geográficas (latitud, longitud) de las capitales de cada departamento
 DEPARTAMENTOS = {
     "Amazonas": {"lat": -6.2294, "lng": -77.8726},
     "Ancash": {"lat": -9.5278, "lng": -77.5278},
@@ -27,7 +26,7 @@ DEPARTAMENTOS = {
     "Ucayali": {"lat": -8.3791, "lng": -74.5539}
 }
 
-# Lista de adyacencias (fronteras terrestres entre departamentos)
+
 ADYACENCIAS = {
     "Amazonas": ["Loreto", "San Martin", "La Libertad", "Cajamarca"],
     "Ancash": ["La Libertad", "Huanuco", "Lima"],

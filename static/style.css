@@ -1,4 +1,3 @@
-/* Reset y Variables Bases */
 :root {
     --bg-panel: rgba(18, 20, 28, 0.85);
     --bg-panel-border: rgba(255, 255, 255, 0.1);
@@ -20,10 +19,10 @@ body {
     font-family: 'Outfit', sans-serif;
     background-color: #000;
     color: var(--text-primary);
-    overflow: hidden; /* Todo está en el mapa */
+    overflow: hidden; 
 }
 
-/* Contenedor del Mapa */
+
 #map {
     position: absolute;
     top: 0;
@@ -33,7 +32,7 @@ body {
     z-index: 1;
 }
 
-/* Estilo del Panel Flotante Glassmorphism */
+
 .ui-panel {
     position: absolute;
     top: 40px;
@@ -54,7 +53,7 @@ body {
     overflow-y: auto;
 }
 
-/* Ocultar barra de scroll para estética limpia en el panel */
+
 .ui-panel::-webkit-scrollbar {
     display: none;
 }
@@ -80,7 +79,7 @@ body {
     line-height: 1.5;
 }
 
-/* Controles */
+
 .controls-section {
     display: flex;
     flex-direction: column;
@@ -146,7 +145,7 @@ select option {
     opacity: 0.8;
 }
 
-/* Botón Principal */
+
 .primary-btn {
     margin-top: 10px;
     background: linear-gradient(135deg, var(--accent), var(--accent-hover));
@@ -181,7 +180,7 @@ select option {
     box-shadow: none;
 }
 
-/* Loader Animation inside Button */
+
 .loader {
     border: 3px solid rgba(255, 255, 255, 0.3);
     border-top: 3px solid white;
@@ -197,7 +196,7 @@ select option {
     100% { transform: rotate(360deg); }
 }
 
-/* Tarjeta de Resultados */
+
 .results-card {
     background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -229,7 +228,7 @@ select option {
 .distance-metric .value {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #10b981; /* Emerald green */
+    color: #10b981; 
 }
 
 .distance-metric .unit {
@@ -238,7 +237,7 @@ select option {
     font-weight: 500;
 }
 
-/* Steps de la Ruta */
+
 .path-steps {
     display: flex;
     flex-direction: column;

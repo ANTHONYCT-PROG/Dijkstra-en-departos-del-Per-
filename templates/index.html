@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ruta Dijkstra - Perú</title>
-    <!-- Incluir CSS principal -->
+
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <!-- Fuente moderna -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
+
     
-    <!-- Contenedor del Mapa (Fondo completo) -->
     <div id="map"></div>
 
-    <!-- Panel Lateral Flotante (UI Principal) -->
+    
     <div class="ui-panel">
         <div class="panel-header">
             <h1>Dijkstra <span>Maps</span></h1>
@@ -34,7 +36,11 @@
             </div>
 
             <div class="icon-connector">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <polyline points="19 12 12 19 5 12"></polyline>
+                </svg>
             </div>
 
             <div class="input-group">
@@ -58,18 +64,17 @@
                 <span class="value" id="distance-val">0</span>
                 <span class="unit">Kilómetros</span>
             </div>
-            
+
             <div id="path-steps" class="path-steps">
-                <!-- Se llenará dinámicamente con JS -->
+
             </div>
         </div>
     </div>
 
-    <!-- 
-      REEMPLAZA ESTE SCRIPT CON TU API KEY REAL.
-      Cambia TU_API_KEY_AQUI por tu Clave de API de Google Maps.
-    -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY_AQUI&callback=initMap" async defer></script>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDY8Gbdxg03Bh604ZB-IdrrZtQLMeFTOPU&callback=initMap"
+        async defer></script>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
+
 </html>
